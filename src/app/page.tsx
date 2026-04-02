@@ -1,65 +1,166 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { useEffect, useState, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
+import { useGameStore } from '@/store/gameStore';
+
+const BOOT_LINES = [
+  { text: 'DESCEND v0.1.0', delay: 200, dim: false, danger: false },
+  { text: 'INITIALIZING NEURAL INTERFACE...', delay: 1000, dim: true, danger: false },
+  { text: '> LOADING SIMULATION ENVIRONMENT... [OK]', delay: 1800, dim: true, danger: false },
+  { text: '> VERIFYING SUBJECT IDENTITY... [OK]', delay: 2600, dim: true, danger: false },
+  { text: '> CALIBRATING DECISION ENGINE... [OK]', delay: 3400, dim: true, danger: false },
+  { text: '> WARNING: REALITY ANCHOR UNSTABLE', delay: 4400, dim: false, danger: true },
+];
+
+const ENTER_DELAY = 5600;
+
+export default function StartScreen() {
+  const router = useRouter();
+  const { startGame } = useGameStore();
+  const [visibleLines, setVisibleLines] = useState<number[]>([]);
+  const [showEnter, setShowEnter] = useState(false);
+  const [entering, setEntering] = useState(false);
+
+  useEffect(() => {
+    const timers: ReturnType<typeof setTimeout>[] = [];
+
+    BOOT_LINES.forEach((line, i) => {
+      const t = setTimeout(() => {
+        setVisibleLines((prev) => [...prev, i]);
+      }, line.delay);
+      timers.push(t);
+    });
+
+    const enterTimer = setTimeout(() => setShowEnter(true), ENTER_DELAY);
+    timers.push(enterTimer);
+
+    return () => timers.forEach(clearTimeout);
+  }, []);
+
+  const handleEnter = useCallback(() => {
+    if (entering) return;
+    setEntering(true);
+    startGame();
+    setTimeout(() => router.push('/game'), 600);
+  }, [entering, startGame, router]);
+
+  useEffect(() => {
+    if (!showEnter) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ') handleEnter();
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [showEnter, handleEnter]);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '24px',
+        fontFamily: "'JetBrains Mono', 'Courier New', monospace",
+      }}
+    >
+      <div style={{ width: '100%', maxWidth: '600px' }}>
+        {BOOT_LINES.map((line, i) => (
+          <div
+            key={i}
+            style={{
+              opacity: visibleLines.includes(i) ? 1 : 0,
+              transform: visibleLines.includes(i) ? 'translateY(0)' : 'translateY(4px)',
+              transition: 'opacity 0.4s ease, transform 0.4s ease',
+              marginBottom: '8px',
+              fontSize: i === 0 ? '1.2rem' : '0.8rem',
+              fontWeight: i === 0 ? '700' : '400',
+              color: line.danger ? '#ff0040' : line.dim ? '#008f11' : '#00ff41',
+              letterSpacing: i === 0 ? '0.2em' : '0.05em',
+              animation:
+                line.danger && visibleLines.includes(i)
+                  ? 'glow-pulse 1.5s ease-in-out infinite'
+                  : undefined,
+            }}
+          >
+            {line.text}
+          </div>
+        ))}
+
+        <div
+          style={{
+            borderTop: '1px solid #1a2a1a',
+            marginTop: '32px',
+            marginBottom: '32px',
+            opacity: showEnter ? 1 : 0,
+            transition: 'opacity 0.6s ease',
+          }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+        <div
+          style={{
+            opacity: showEnter ? 1 : 0,
+            transform: showEnter ? 'translateY(0)' : 'translateY(8px)',
+            transition: 'opacity 0.6s ease, transform 0.6s ease',
+          }}
+        >
+          <button
+            onClick={handleEnter}
+            disabled={entering}
+            style={{
+              background: 'none',
+              border: '1px solid #00ff41',
+              color: entering ? '#008f11' : '#00ff41',
+              fontFamily: "'JetBrains Mono', 'Courier New', monospace",
+              fontSize: '0.85rem',
+              letterSpacing: '0.15em',
+              padding: '12px 32px',
+              cursor: entering ? 'not-allowed' : 'pointer',
+              transition: 'all 0.2s ease',
+              animation: entering ? 'none' : 'glow-pulse 2.5s ease-in-out infinite',
+            }}
+            onMouseEnter={(e) => {
+              if (!entering) {
+                const btn = e.currentTarget as HTMLButtonElement;
+                btn.style.background = 'rgba(0,255,65,0.08)';
+                btn.style.boxShadow = '0 0 20px rgba(0,255,65,0.3)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              const btn = e.currentTarget as HTMLButtonElement;
+              btn.style.background = 'none';
+              btn.style.boxShadow = 'none';
+            }}
+          >
+            {entering ? '> LOADING...' : '> ENTER THE MATRIX'}
+          </button>
+          <p
+            style={{
+              color: '#003300',
+              fontSize: '0.6rem',
+              marginTop: '12px',
+              letterSpacing: '0.08em',
+            }}
+          >
+            press ENTER or SPACE to begin
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div
+          style={{
+            marginTop: '80px',
+            opacity: showEnter ? 0.2 : 0,
+            transition: 'opacity 1s ease 0.5s',
+            fontSize: '0.6rem',
+            color: '#003300',
+            letterSpacing: '0.1em',
+          }}
+        >
+          THIS IS NOT A GAME ABOUT WINNING.
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

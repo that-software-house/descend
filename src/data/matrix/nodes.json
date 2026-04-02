@@ -1,0 +1,364 @@
+[
+  {
+    "id": "init",
+    "text": ["Wake up, Neo...", "..."],
+    "choices": [
+      { "id": "c1", "label": "> _", "next": "apartment_night" }
+    ],
+    "glitch": "none"
+  },
+  {
+    "id": "apartment_night",
+    "text": [
+      "2:13 AM. Your apartment smells like cold coffee and dead circuits.",
+      "By day, you are Thomas A. Anderson. Programmer. Metacortex, floor 7, cubicle 9.",
+      "By night, you are something else. Something they don't have a file on. Yet.",
+      "Your terminal blinks. Then a message appears that you didn't write."
+    ],
+    "choices": [
+      { "id": "c1", "label": "Read the message.", "next": "the_message" },
+      { "id": "c2", "label": "Minimize it. You have work to finish.", "next": "the_message_ignored" }
+    ]
+  },
+  {
+    "id": "the_message_ignored",
+    "text": [
+      "You minimize the window.",
+      "You keep typing.",
+      "Three seconds pass.",
+      "The window maximizes itself.",
+      "The cursor blinks, waiting."
+    ],
+    "choices": [
+      { "id": "c1", "label": "Read it.", "next": "the_message" }
+    ],
+    "effects": { "danger": 1 }
+  },
+  {
+    "id": "the_message",
+    "text": [
+      "> THE MATRIX HAS YOU, NEO.",
+      "...",
+      "> KNOCK KNOCK.",
+      "Your hands have stopped moving. The room feels smaller than it did a moment ago."
+    ],
+    "choices": [
+      { "id": "c1", "label": "Follow the white rabbit.", "next": "doorbell" },
+      { "id": "c2", "label": "This is someone's idea of a joke. Close it.", "next": "doorbell_reluctant" }
+    ]
+  },
+  {
+    "id": "doorbell_reluctant",
+    "text": [
+      "You close it.",
+      "You sit in the dark for a while.",
+      "You go to bed at 3:12 AM.",
+      "At 3:47 AM, there is a knock at the door.",
+      "You were not asleep."
+    ],
+    "choices": [
+      { "id": "c1", "label": "Answer it.", "next": "doorbell" }
+    ],
+    "effects": { "time": 10 }
+  },
+  {
+    "id": "doorbell",
+    "text": [
+      "It's Choi. He owes you money. Tonight he's picking up a disk.",
+      "\"Hallelujah. You're my savior, man. My own personal Jesus Christ.\"",
+      "He has people with him. Music bleeding from someone's headphones.",
+      "Then you see her. A girl near the back.",
+      "On her shoulder: a tattoo.",
+      "A white rabbit."
+    ],
+    "choices": [
+      { "id": "c1", "label": "Go with them.", "next": "the_club" },
+      { "id": "c2", "label": "Stay. Something doesn't feel right.", "next": "loop_01" }
+    ]
+  },
+  {
+    "id": "loop_01",
+    "text": [
+      "You close the door.",
+      "You go back to your terminal.",
+      "2:13 AM.",
+      "...",
+      "That is wrong. It was closer to 4 AM a moment ago.",
+      "Your terminal blinks. A message appears that you didn't write."
+    ],
+    "choices": [
+      { "id": "c1", "label": "...", "next": "apartment_night" }
+    ],
+    "glitch": "subtle",
+    "effects": { "time": 10, "danger": 1, "flags": { "loopCount": 1 } }
+  },
+  {
+    "id": "the_club",
+    "text": [
+      "The bass is too loud. The lights are wrong.",
+      "You find a corner. You watch people move.",
+      "A woman appears beside you. She does not ask if the seat is taken.",
+      "\"I know why you're here, Neo. I know what you've been afraid to ask.\"",
+      "Her name is Trinity. She knows yours."
+    ],
+    "choices": [
+      { "id": "c1", "label": "\"How do you know my name?\"", "next": "the_offer" },
+      { "id": "c2", "label": "Walk away. This is insane.", "next": "loop_01" }
+    ],
+    "effects": { "time": 10 }
+  },
+  {
+    "id": "the_offer",
+    "text": [
+      "His name is Morpheus.",
+      "He has two pills. One in each hand.",
+      "\"You take the blue pill — the story ends. You wake up in your bed and believe whatever you want to believe.\"",
+      "\"You take the red pill — you stay in Wonderland. And I show you how deep the rabbit hole goes.\"",
+      "He watches you the way people watch someone who is about to make a mistake they cannot undo."
+    ],
+    "choices": [
+      { "id": "c1", "label": "Take the red pill.", "next": "the_unplugging", "effect": { "belief": 1 } },
+      { "id": "c2", "label": "Take the blue pill.", "next": "loop_02" }
+    ]
+  },
+  {
+    "id": "loop_02",
+    "text": [
+      "You wake up.",
+      "Your bed. Your apartment. The alarm hasn't gone off yet.",
+      "It was a dream.",
+      "But your hand won't stop shaking.",
+      "The terminal blinks. A message appears.",
+      "Same words.",
+      "The clock says 2:13 AM."
+    ],
+    "choices": [
+      { "id": "c1", "label": "Ignore it. Go back to sleep.", "next": "loop_03" },
+      { "id": "c2", "label": "Read it again.", "next": "loop_03" }
+    ],
+    "glitch": "intense",
+    "effects": { "time": 20, "danger": 2, "flags": { "loopCount": 1 } }
+  },
+  {
+    "id": "loop_03",
+    "text": [
+      "2:13 AM again.",
+      "You have been here before. You know you have.",
+      "The coffee is cold in the same way. The cursor blinks at the same interval.",
+      "Something is wrong with time.",
+      "Morpheus offered you something. You said no.",
+      "You keep saying no.",
+      "...",
+      "But there is another way out."
+    ],
+    "choices": [
+      { "id": "c1", "label": "Follow the same path.", "next": "loop_04" },
+      { "id": "c2", "label": "I remember. Take me back to the choice.", "next": "the_offer", "condition": "loopCount >= 1" }
+    ],
+    "glitch": "intense",
+    "effects": { "time": 20, "danger": 3 }
+  },
+  {
+    "id": "loop_04",
+    "text": [
+      "2:13 AM.",
+      "2:13 AM.",
+      "2:13 AM.",
+      "You have been here for a very long time now.",
+      "You do not remember what came before this.",
+      "Morpheus. Trinity. The choice.",
+      "They feel like something you dreamed about once.",
+      "The exit is not here anymore."
+    ],
+    "choices": [
+      { "id": "c1", "label": "...", "next": "ending_limbo" }
+    ],
+    "glitch": "extreme",
+    "effects": { "time": 30, "danger": 5 }
+  },
+  {
+    "id": "the_unplugging",
+    "text": [
+      "Cold.",
+      "The first thing you feel is cold.",
+      "Then: metal. Tubes. The sound of something releasing.",
+      "You open your eyes in a body you have never used before.",
+      "\"Welcome to the real world.\"",
+      "The lights are harsh. Everything is rust and wire and silence.",
+      "This is what is left of the world."
+    ],
+    "choices": [
+      { "id": "c1", "label": "\"What is this place?\"", "next": "the_construct" }
+    ],
+    "effects": { "danger": 2, "belief": 1 }
+  },
+  {
+    "id": "the_construct",
+    "text": [
+      "White. Infinite white.",
+      "\"This is the construct. A loading program.\"",
+      "Morpheus explains everything. The machines. The harvest. The dream you were living.",
+      "Your muscles have atrophied. Your eyes have never focused in real light before.",
+      "But here, in the white, anything can exist.",
+      "He asks you: what do you believe is possible?"
+    ],
+    "choices": [
+      {
+        "id": "c1",
+        "label": "\"I believe what I can measure. What I can prove.\"",
+        "next": "the_oracle",
+        "effect": { "belief": -1 }
+      },
+      {
+        "id": "c2",
+        "label": "\"I don't know what I believe yet. But I'm willing.\"",
+        "next": "the_oracle",
+        "effect": { "belief": 1 }
+      }
+    ]
+  },
+  {
+    "id": "the_oracle",
+    "text": [
+      "Her kitchen smells like cookies.",
+      "She looks at you the way people look at something they already know the answer to.",
+      "\"I'm going to let you in on a little secret. Being the One is just like being in love. No one can tell you you are. You just know it.\"",
+      "Then she pauses.",
+      "She looks past Neo.",
+      "She looks at you.",
+      "Not at the character. Not at Thomas Anderson.",
+      "At you.",
+      "\"You've been here before,\" she says quietly. \"Haven't you.\""
+    ],
+    "choices": [
+      { "id": "c1", "label": "\"I don't know what I am.\"", "next": "morpheus_captured" },
+      { "id": "c2", "label": "\"I'm not the One.\"", "next": "morpheus_captured", "effect": { "belief": -1 } }
+    ],
+    "meta": true
+  },
+  {
+    "id": "morpheus_captured",
+    "text": [
+      "The call comes in the middle of a training run.",
+      "Cypher. It was Cypher.",
+      "He made a deal — his re-insertion into the Matrix in exchange for Morpheus.",
+      "Morpheus is in the hands of the Agents now.",
+      "They will break him. Extract the codes.",
+      "Tank is looking at you. Waiting."
+    ],
+    "choices": [
+      { "id": "c1", "label": "\"We're going in. Load the jump program.\"", "next": "the_rescue" },
+      { "id": "c2", "label": "\"It's too dangerous. We abort.\"", "next": "ending_captured" }
+    ]
+  },
+  {
+    "id": "the_rescue",
+    "text": [
+      "The lobby.",
+      "Marble floors. Security station. Cameras.",
+      "You move like something trained for exactly this.",
+      "Because you have been.",
+      "Floors blur. You find him.",
+      "Now there is only one thing standing between Morpheus and the exit."
+    ],
+    "choices": [
+      { "id": "c1", "label": "Push forward.", "next": "agent_smith" }
+    ],
+    "effects": { "danger": 3 }
+  },
+  {
+    "id": "agent_smith",
+    "text": [
+      "He is waiting on the roof.",
+      "He moves faster than physics should allow.",
+      "\"Mr. Anderson. Do you hear that? That is the sound of inevitability.\"",
+      "He catches your strike before it lands.",
+      "\"It is the sound of your death.\"",
+      "The city is far below. The wind is very cold.",
+      "You look at his hand holding your fist.",
+      "And you think about spoons."
+    ],
+    "choices": [
+      {
+        "id": "c1",
+        "label": "\"My name... is Neo.\"",
+        "next": "ending_escape",
+        "condition": "belief >= 2"
+      },
+      {
+        "id": "c2",
+        "label": "Fight your way to the exit.",
+        "next": "the_phone"
+      },
+      {
+        "id": "c3",
+        "label": "Run.",
+        "next": "the_phone",
+        "effect": { "danger": 1 }
+      }
+    ]
+  },
+  {
+    "id": "the_phone",
+    "text": [
+      "The phone is ringing.",
+      "It is across the room.",
+      "An Agent is 40 feet behind you and closing.",
+      "You can hear the footsteps.",
+      "30 feet.",
+      "The phone is still ringing.",
+      "20 feet."
+    ],
+    "choices": [
+      { "id": "c1", "label": "Answer it.", "next": "ending_escape" },
+      { "id": "c2", "label": "You freeze. You cannot make it.", "next": "ending_captured" }
+    ]
+  },
+  {
+    "id": "ending_escape",
+    "text": [
+      "The city cracks open.",
+      "You see it — for the first time, you actually see it.",
+      "Not the buildings. Not the people.",
+      "The code.",
+      "Cascading green. Everything made of it. Everyone.",
+      "You understand now what Morpheus meant.",
+      "What the Oracle knew.",
+      "You are not the One because someone told you.",
+      "You are the One because you stopped waiting to be told."
+    ],
+    "choices": [],
+    "ending": "escape"
+  },
+  {
+    "id": "ending_captured",
+    "text": [
+      "SYSTEM SECURE.",
+      "The Agents are very efficient.",
+      "It does not hurt. That is almost the worst part.",
+      "Somewhere in a server farm the size of a country, a process completes.",
+      "Thomas A. Anderson is reintegrated.",
+      "Mr. Anderson returns to his desk on floor 7, cubicle 9.",
+      "The Matrix continues.",
+      "It always continues."
+    ],
+    "choices": [],
+    "ending": "captured"
+  },
+  {
+    "id": "ending_limbo",
+    "text": [
+      "2:13 AM.",
+      "It has been 2:13 AM for longer than you can calculate.",
+      "You know what you were supposed to do.",
+      "You always knew.",
+      "But knowing and believing are different countries.",
+      "You could not find the border crossing in time.",
+      "Morpheus offered you a door.",
+      "You kept choosing the wall.",
+      "The door does not come twice."
+    ],
+    "choices": [],
+    "ending": "limbo"
+  }
+]

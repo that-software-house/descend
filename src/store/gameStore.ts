@@ -3,10 +3,7 @@
 import { create } from 'zustand';
 import { GameStore, GameState, Choice, GlitchIntensity, EndingType } from '@/types/game';
 import { applyEffects } from '@/engine/narrativeEngine';
-import rawNodes from '@/data/matrix/nodes.json';
-import { GameNode } from '@/types/game';
-
-const nodes = rawNodes as GameNode[];
+import { getNodesSync } from '@/lib/nodeRepository';
 
 const INITIAL_GAME_STATE: GameState = {
   timeElapsed: 0,
@@ -47,6 +44,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
     const stateAfterChoice = applyEffects(gameState, choice.effect);
 
+    const nodes = getNodesSync();
     const nextNode = nodes.find((n) => n.id === choice.next);
     if (!nextNode) return;
 

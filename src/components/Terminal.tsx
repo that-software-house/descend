@@ -8,10 +8,8 @@ import TypewriterText from './TypewriterText';
 import ChoiceList from './ChoiceList';
 import GlitchOverlay from './GlitchOverlay';
 import AmbientAudio from './AmbientAudio';
-import rawNodes from '@/data/matrix/nodes.json';
+import { getNodes, getNodesSync } from '@/lib/nodeRepository';
 import { GameNode } from '@/types/game';
-
-const nodes = rawNodes as GameNode[];
 
 export default function Terminal() {
   const router = useRouter();
@@ -27,7 +25,13 @@ export default function Terminal() {
   } = useGameStore();
 
   const [typingComplete, setTypingComplete] = useState(false);
+  const [nodes, setNodes] = useState<GameNode[]>(getNodesSync());
   const contentRef = useRef<HTMLDivElement>(null);
+
+  // Hydrate from Supabase on mount (falls back to local JSON automatically)
+  useEffect(() => {
+    getNodes().then(setNodes);
+  }, []);
 
   const currentNode = resolveNode(currentNodeId, nodes);
   const visibleChoices = currentNode

@@ -30,26 +30,28 @@ function MatrixRain() {
     const drops: number[] = Array(cols).fill(1);
 
     const draw = () => {
-      ctx.fillStyle = 'rgba(5, 5, 5, 0.06)';
+      ctx.fillStyle = 'rgba(5, 5, 5, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+      ctx.font = `${fontSize}px 'JetBrains Mono', monospace`;
+
       for (let i = 0; i < drops.length; i++) {
+        const y = drops[i] * fontSize;
+        if (y < 0) { drops[i]++; continue; }
+
         const char = MATRIX_CHARS[Math.floor(Math.random() * MATRIX_CHARS.length)];
-        const brightness = Math.random();
-        ctx.fillStyle =
-          brightness > 0.95
-            ? 'rgba(200, 255, 200, 0.9)'
-            : brightness > 0.7
-            ? 'rgba(0, 255, 65, 0.7)'
-            : 'rgba(0, 143, 17, 0.4)';
 
-        ctx.font = `${fontSize}px 'JetBrains Mono', monospace`;
-        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+        // Leading character is bright, trail fades
+        ctx.fillStyle = y < fontSize * 2 ? '#ccffdd' : '#00ff41';
+        ctx.globalAlpha = Math.max(0.08, 1 - (drops[i] * fontSize) / canvas.height);
+        ctx.fillText(char, i * fontSize, y);
+        ctx.globalAlpha = 1;
 
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        if (y > canvas.height && Math.random() > 0.975) {
           drops[i] = 0;
+        } else {
+          drops[i]++;
         }
-        drops[i]++;
       }
     };
 

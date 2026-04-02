@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme {
+@theme inline {
   --color-matrix: #00ff41;
   --color-matrix-dim: #008f11;
   --color-matrix-dark: #050505;
@@ -80,8 +80,12 @@ html, body {
   background-color: #050505;
   color: #00ff41;
   font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.7;
   min-height: 100vh;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Scanline overlay */

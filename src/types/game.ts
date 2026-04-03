@@ -1,5 +1,6 @@
 export type EndingType = 'escape' | 'captured' | 'limbo';
 export type GlitchIntensity = 'none' | 'subtle' | 'intense' | 'extreme';
+export type InputType = 'choices' | 'text' | 'mixed';
 
 export interface Effects {
   time?: number;
@@ -26,6 +27,8 @@ export interface GameNode {
   meta?: boolean;
   ending?: EndingType;
   ambientOverride?: string;
+  inputType?: InputType;
+  textPrompt?: string;
 }
 
 export interface GameState {

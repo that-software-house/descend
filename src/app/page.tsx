@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/store/gameStore';
+import { unlockAudio } from '@/components/AmbientAudio';
 
 const BOOT_LINES = [
   { text: 'DESCEND v0.1.0', delay: 200, dim: false, danger: false },
@@ -41,6 +42,7 @@ export default function StartScreen() {
   const handleEnter = useCallback(() => {
     if (entering) return;
     setEntering(true);
+    unlockAudio(); // must happen inside user gesture before navigation
     startGame();
     setTimeout(() => router.push('/game'), 600);
   }, [entering, startGame, router]);

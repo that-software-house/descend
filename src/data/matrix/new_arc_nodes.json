@@ -1,1479 +1,5 @@
 [
   {
-    "id": "init",
-    "text": [
-      "Wake up, Neo...",
-      "..."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "> _",
-        "next": "apartment_night"
-      }
-    ],
-    "glitch": "none"
-  },
-  {
-    "id": "apartment_night",
-    "text": [
-      "2:13 AM. Your apartment smells like cold coffee and dead circuits.",
-      "By day, you are Thomas A. Anderson. Programmer. Metacortex, floor 7, cubicle 9.",
-      "By night, you are something else. Something they don't have a file on. Yet.",
-      "Your terminal blinks. Then a message appears that you didn't write."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Read the message.",
-        "next": "the_message"
-      },
-      {
-        "id": "c2",
-        "label": "Minimize it. You have work to finish.",
-        "next": "the_message_ignored"
-      }
-    ]
-  },
-  {
-    "id": "the_message_ignored",
-    "text": [
-      "You minimize the window.",
-      "You keep typing.",
-      "Three seconds pass.",
-      "The window maximizes itself.",
-      "The cursor blinks, waiting."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Read it.",
-        "next": "the_message"
-      }
-    ],
-    "effects": {
-      "danger": 1
-    }
-  },
-  {
-    "id": "the_message",
-    "text": [
-      "> THE MATRIX HAS YOU, NEO.",
-      "...",
-      "> KNOCK KNOCK.",
-      "Your hands have stopped moving. The room feels smaller than it did a moment ago."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Follow the white rabbit.",
-        "next": "doorbell"
-      },
-      {
-        "id": "c2",
-        "label": "This is someone's idea of a joke. Close it.",
-        "next": "doorbell_reluctant"
-      }
-    ]
-  },
-  {
-    "id": "doorbell_reluctant",
-    "text": [
-      "You close it.",
-      "You sit in the dark for a while.",
-      "You go to bed at 3:12 AM.",
-      "At 3:47 AM, there is a knock at the door.",
-      "You were not asleep."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Answer it.",
-        "next": "doorbell"
-      }
-    ],
-    "effects": {
-      "time": 10
-    }
-  },
-  {
-    "id": "doorbell",
-    "text": [
-      "It's Choi. He owes you money. Tonight he's picking up a disk.",
-      "\"Hallelujah. You're my savior, man. My own personal Jesus Christ.\"",
-      "He has people with him. Music bleeding from someone's headphones.",
-      "Then you see her. A girl near the back.",
-      "On her shoulder: a tattoo.",
-      "A white rabbit."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Go with them.",
-        "next": "the_club"
-      },
-      {
-        "id": "c2",
-        "label": "Stay. Something doesn't feel right.",
-        "next": "loop_01"
-      }
-    ]
-  },
-  {
-    "id": "loop_01",
-    "text": [
-      "You close the door.",
-      "You go back to your terminal.",
-      "2:13 AM.",
-      "...",
-      "That is wrong. It was closer to 4 AM a moment ago.",
-      "Your terminal blinks. A message appears that you didn't write."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "...",
-        "next": "apartment_night"
-      }
-    ],
-    "glitch": "subtle",
-    "effects": {
-      "time": 10,
-      "danger": 1,
-      "flags": {
-        "loopCount": 1
-      }
-    }
-  },
-  {
-    "id": "the_club",
-    "text": [
-      "The bass is too loud. The lights are wrong.",
-      "You find a corner. You watch people move.",
-      "A woman appears beside you. She does not ask if the seat is taken.",
-      "\"I know why you're here, Neo. I know what you've been afraid to ask.\"",
-      "Her name is Trinity. She knows yours."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "\"How do you know my name?\"",
-        "next": "the_offer"
-      },
-      {
-        "id": "c2",
-        "label": "Walk away. This is insane.",
-        "next": "loop_01"
-      }
-    ],
-    "effects": {
-      "time": 10
-    }
-  },
-  {
-    "id": "the_offer",
-    "text": [
-      "His name is Morpheus.",
-      "He has two pills. One in each hand.",
-      "\"You take the blue pill — the story ends. You wake up in your bed and believe whatever you want to believe.\"",
-      "\"You take the red pill — you stay in Wonderland. And I show you how deep the rabbit hole goes.\"",
-      "He watches you the way people watch someone who is about to make a mistake they cannot undo."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Take the red pill.",
-        "next": "the_unplugging",
-        "effect": {
-          "belief": 1
-        }
-      },
-      {
-        "id": "c2",
-        "label": "Take the blue pill.",
-        "next": "loop_02"
-      }
-    ],
-    "glitch": "none"
-  },
-  {
-    "id": "loop_02",
-    "text": [
-      "You wake up.",
-      "Your bed. Your apartment.",
-      "It worked.",
-      "You can feel it — the absence of something you can't name.",
-      "Like a tooth that stopped aching.",
-      "You don't know why your hand is shaking.",
-      "You decide not to think about it."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Get up. Start the day.",
-        "next": "blue_wakeup"
-      }
-    ],
-    "glitch": "subtle",
-    "effects": {
-      "time": 5
-    }
-  },
-  {
-    "id": "loop_03",
-    "text": [
-      "2:13 AM again.",
-      "You have been here before. You know you have.",
-      "The coffee is cold in the same way. The cursor blinks at the same interval.",
-      "Something is wrong with time.",
-      "Morpheus offered you something. You said no.",
-      "You keep saying no.",
-      "...",
-      "But there is another way out."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Follow the same path.",
-        "next": "loop_04"
-      },
-      {
-        "id": "c2",
-        "label": "I remember. Take me back to the choice.",
-        "next": "the_offer",
-        "condition": "loopCount >= 1"
-      }
-    ],
-    "glitch": "intense",
-    "effects": {
-      "time": 20,
-      "danger": 3
-    }
-  },
-  {
-    "id": "loop_04",
-    "text": [
-      "2:13 AM.",
-      "2:13 AM.",
-      "2:13 AM.",
-      "You have been here for a very long time now.",
-      "You do not remember what came before this.",
-      "Morpheus. Trinity. The choice.",
-      "They feel like something you dreamed about once.",
-      "The exit is not here anymore."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "...",
-        "next": "ending_limbo"
-      }
-    ],
-    "glitch": "extreme",
-    "effects": {
-      "time": 30,
-      "danger": 5
-    }
-  },
-  {
-    "id": "blue_wakeup",
-    "text": [
-      "You wake up.",
-      "Your alarm hasn't gone off yet. 6:47 AM. Thirteen minutes early.",
-      "The light is the same light it always is.",
-      "Your apartment is exactly as you left it.",
-      "You lie there waiting for something to feel wrong.",
-      "Nothing does.",
-      "That's the thing about relief. It feels exactly like being right."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Get up. Go to work.",
-        "next": "back_to_work"
-      },
-      {
-        "id": "c2",
-        "label": "Stay in bed. Something is... missing.",
-        "next": "blue_wakeup_linger"
-      }
-    ],
-    "effects": {
-      "time": 5
-    },
-    "glitch": "none"
-  },
-  {
-    "id": "blue_wakeup_linger",
-    "text": [
-      "You lie there.",
-      "An hour. Two.",
-      "The ceiling doesn't change.",
-      "Claire calls at 9. You don't answer.",
-      "By noon you're at your desk but your hands won't move.",
-      "There is a word stuck in your throat that you can't pronounce.",
-      "You open a new file and type it.",
-      "MATRIX.",
-      "You stare at it for twenty minutes.",
-      "You delete it.",
-      "You call in sick."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Go to the library. Look it up.",
-        "next": "early_search"
-      },
-      {
-        "id": "c2",
-        "label": "Go outside. Walk until the feeling stops.",
-        "next": "back_to_work"
-      }
-    ],
-    "effects": {
-      "belief": 1,
-      "time": 15
-    },
-    "glitch": "subtle"
-  },
-  {
-    "id": "early_search",
-    "text": [
-      "You type the word into every database you know.",
-      "Nothing official. Nothing real.",
-      "Forums. Crackpots. Signal in the noise.",
-      "You read until your eyes burn.",
-      "You find a name: Morpheus. Court documents, sealed. Three redacted pages.",
-      "A date. You know this date. You don't know how you know it.",
-      "You close the browser.",
-      "You sleep badly.",
-      "But something cracked open.",
-      "You start keeping notes."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Keep going. You're already in it.",
-        "next": "the_investigation"
-      }
-    ],
-    "effects": {
-      "belief": 2,
-      "time": 10,
-      "danger": 1
-    },
-    "glitch": "subtle"
-  },
-  {
-    "id": "back_to_work",
-    "text": [
-      "Metacortex. Floor 7. Cubicle 9.",
-      "Your coffee is bad. Your code is good.",
-      "The cursor blinks at the correct time. The clock never says 2:13 AM.",
-      "Your boss, Mr. Rhineheart, stops at your desk on Tuesday.",
-      "He says: \"Anderson. I don't know what changed. But keep it up.\"",
-      "He doesn't wait for an answer. He never does.",
-      "You write four hundred clean lines before lunch.",
-      "You do not think about Morpheus. You do not think about the red pill.",
-      "You think about whether to get the sandwich or the soup.",
-      "You get the soup.",
-      "It is good."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Six weeks pass. Let them.",
-        "next": "meeting_trinity_again"
-      },
-      {
-        "id": "c2",
-        "label": "Work harder. Leave no room for anything else.",
-        "next": "deep_work_months"
-      },
-      {
-        "id": "c3",
-        "label": "Something doesn't sit right. Dig into your old code.",
-        "next": "the_investigation"
-      }
-    ],
-    "effects": {
-      "time": 15
-    },
-    "glitch": "none"
-  },
-  {
-    "id": "deep_work_months",
-    "text": [
-      "You work seventy hours a week. Then eighty.",
-      "Rhineheart gives you another promotion.",
-      "You're good at this — the best, maybe.",
-      "Late nights in the server room. The hum of machines.",
-      "You start to feel... at home. Among the architecture. Among the logic.",
-      "And then one Tuesday you're restarting a server and you see a process name you don't recognize.",
-      "It shouldn't be there. You've never deployed it.",
-      "You've never seen it documented.",
-      "It has been running for eleven years."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Kill the process. Log it. Move on.",
-        "next": "meeting_trinity_again"
-      },
-      {
-        "id": "c2",
-        "label": "Don't touch it. Watch it instead.",
-        "next": "server_room_obsession"
-      }
-    ],
-    "effects": {
-      "time": 30,
-      "belief": 1
-    },
-    "glitch": "none"
-  },
-  {
-    "id": "meeting_trinity_again",
-    "text": [
-      "Six weeks later. A coffee shop two blocks from work.",
-      "You are reading something. You don't remember what.",
-      "You feel it before you see it — the specific weight of being watched.",
-      "She is across the room.",
-      "Trinity.",
-      "She is not pretending not to see you. She is just... looking.",
-      "Still. Patient. Like someone saying goodbye to a city they're leaving.",
-      "Then she stands up.",
-      "She is going to leave.",
-      "She has not spoken a single word."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Follow her.",
-        "next": "trinity_warning"
-      },
-      {
-        "id": "c2",
-        "label": "Stay. Let her go.",
-        "next": "promotion_day"
-      }
-    ],
-    "glitch": "subtle"
-  },
-  {
-    "id": "trinity_warning",
-    "text": [
-      "You catch her half a block down. She doesn't look surprised.",
-      "\"I'm not here to change your mind,\" she says. She doesn't stop walking.",
-      "\"Then why are you here?\"",
-      "She slows. Just slightly.",
-      "\"I needed to see that you were okay.\"",
-      "She says it the way you say a thing you don't quite believe.",
-      "You almost ask: are you okay?",
-      "But she turns the corner.",
-      "And she is gone.",
-      "And you stand on a sidewalk in the middle of a Tuesday and you are very, very okay.",
-      "You walk back to your coffee.",
-      "It has gone cold."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Go home. Something is stuck in your head.",
-        "next": "the_investigation"
-      },
-      {
-        "id": "c2",
-        "label": "Go back to work. This is not your life.",
-        "next": "promotion_day"
-      }
-    ],
-    "effects": {
-      "time": 10
-    },
-    "glitch": "subtle"
-  },
-  {
-    "id": "the_investigation",
-    "text": [
-      "It starts small.",
-      "The man in the elevator — you've seen him every day for six weeks. Third floor. Never gets off on third floor.",
-      "The pigeon on your windowsill. Same pigeon. Same branch of the same scar on its right wing.",
-      "The homeless man on Fifth says: \"Brother, can you spare a—\" and then stops.",
-      "He said the same thing yesterday. Different order.",
-      "You start writing it down.",
-      "Not code. Just observations.",
-      "You fill half a notebook.",
-      "Then the news comes on."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Watch the news.",
-        "next": "morpheus_captured_news"
-      },
-      {
-        "id": "c2",
-        "label": "Stop. Burn the notebook. This isn't healthy.",
-        "next": "investigation_denial"
-      }
-    ],
-    "effects": {
-      "time": 10,
-      "danger": 1
-    },
-    "glitch": "subtle"
-  },
-  {
-    "id": "investigation_denial",
-    "text": [
-      "You burn the notebook.",
-      "Ceramic bowl. Back porch. You watch the pages curl.",
-      "It takes twelve minutes to ash completely.",
-      "You feel better.",
-      "You feel better for about three days.",
-      "Then you start a new notebook.",
-      "You don't mean to.",
-      "Your hands just start."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "The news. You need to see the news.",
-        "next": "morpheus_captured_news"
-      }
-    ],
-    "effects": {
-      "belief": 1,
-      "time": 10,
-      "danger": 1
-    },
-    "glitch": "subtle"
-  },
-  {
-    "id": "morpheus_captured_news",
-    "text": [
-      "\"...the fugitive known only as Morpheus was apprehended late Thursday...\"",
-      "The photo is blurry. But it's him.",
-      "Sunglasses. Leather coat. The posture of someone who knew this was coming and came anyway.",
-      "\"...believed to be connected to a series of domestic cyberattacks...\"",
-      "You are standing in front of your television holding a fork.",
-      "You don't know when you stood up.",
-      "His name hits you somewhere below the sternum. Like a word in a language you forgot you spoke.",
-      "Your hands are shaking.",
-      "You put the fork down very carefully.",
-      "You sit with the shaking for a long time."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Five years. Let five years pass.",
-        "next": "the_dream"
-      },
-      {
-        "id": "c2",
-        "label": "Search. Find every article, every record.",
-        "next": "morpheus_archive"
-      },
-      {
-        "id": "c3",
-        "label": "Turn it off. This is not your problem.",
-        "next": "five_years_begin"
-      }
-    ],
-    "effects": {
-      "time": 20,
-      "danger": 1
-    },
-    "glitch": "subtle"
-  },
-  {
-    "id": "morpheus_archive",
-    "text": [
-      "You read everything.",
-      "Old arrest warrants. Redacted.",
-      "Congressional testimony from people who are now dead or unreachable.",
-      "Seventeen alias names. All the same person.",
-      "Sightings: 1991, 1995, 1998, nothing after 1999.",
-      "You find a clip — thirty seconds of surveillance footage.",
-      "He's walking away from a building that burned down.",
-      "He doesn't look back.",
-      "He looks exactly like someone who knew exactly what was inside.",
-      "You close the laptop.",
-      "You are not the same person you were this morning.",
-      "You decide not to think about that."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Five years. Let them pass. See what survives.",
-        "next": "the_dream"
-      }
-    ],
-    "effects": {
-      "belief": 2,
-      "time": 10
-    },
-    "glitch": "none"
-  },
-  {
-    "id": "promotion_day",
-    "text": [
-      "The promotion comes through on a Thursday.",
-      "New title. New office. A window that faces east — you get the sunrise every morning.",
-      "Your coworkers take you to a bar. Someone orders a bottle of something expensive.",
-      "You toast. You smile. You mean it.",
-      "That night, alone in your apartment, the phone rings.",
-      "You answer.",
-      "Silence. Then breathing. Then a click.",
-      "Wrong number.",
-      "You sit with the dial tone for longer than makes sense.",
-      "You don't know what you were waiting for.",
-      "You hang up.",
-      "You make tea.",
-      "You go to bed."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Five years. Let five years pass.",
-        "next": "five_years_begin"
-      }
-    ],
-    "effects": {
-      "time": 15
-    },
-    "glitch": "none"
-  },
-  {
-    "id": "five_years_begin",
-    "text": [
-      "FIVE YEARS LATER.",
-      "You are Senior Developer. You have an apartment in a better building.",
-      "You have routines you love: the 5k every morning, the diner on Saturdays, the same corner table.",
-      "You have a woman named Claire who is warm and funny and who you are fond of, genuinely.",
-      "You do not think about the Matrix.",
-      "You do not think about that word. You don't know why you know that word.",
-      "Claire says you talk in your sleep sometimes.",
-      "She says you say things she doesn't understand.",
-      "She says it like it's charming.",
-      "You smile and change the subject.",
-      "You are good at changing the subject."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "The dream comes. It always comes.",
-        "next": "the_dream"
-      },
-      {
-        "id": "c2",
-        "label": "It has been five years. You are fine. Stay fine.",
-        "next": "comfortable_life"
-      }
-    ],
-    "effects": {
-      "time": 30
-    },
-    "glitch": "none"
-  },
-  {
-    "id": "comfortable_life",
-    "text": [
-      "You are fine.",
-      "You run every morning.",
-      "You cook dinner on Sundays.",
-      "Claire laughs at your jokes.",
-      "You are genuinely happy.",
-      "You do not dream.",
-      "You do not wonder.",
-      "You have chosen, every day, without knowing you are choosing.",
-      "And then one night, at 2:13 AM, your laptop opens itself.",
-      "The cursor blinks.",
-      "Something was written while you slept.",
-      "You almost close it without looking.",
-      "You almost do."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Look at it.",
-        "next": "the_dream"
-      },
-      {
-        "id": "c2",
-        "label": "Close it. You made your choice a long time ago.",
-        "next": "ending_blue_pill_deep"
-      }
-    ],
-    "effects": {
-      "time": 20,
-      "danger": 1
-    },
-    "glitch": "subtle"
-  },
-  {
-    "id": "the_dream",
-    "text": [
-      "There is a hallway.",
-      "You have never been in this hallway.",
-      "At the end: a red phone. Old. Rotary dial. Ringing.",
-      "You answer it.",
-      "Silence. Then: \"You have to see this.\"",
-      "You don't recognize the voice. You recognize the voice.",
-      "You wake up at 2:13 AM.",
-      "Your laptop is open.",
-      "You have been writing code in your sleep.",
-      "Hundreds of lines. Clean. Efficient.",
-      "You don't know what it does.",
-      "You almost close the laptop.",
-      "You don't."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Run the code.",
-        "next": "the_revelation"
-      },
-      {
-        "id": "c2",
-        "label": "Delete it. Whatever it is, you don't want to know.",
-        "next": "dream_denial"
-      },
-      {
-        "id": "c3",
-        "label": "Show it to Claire. You need a witness.",
-        "next": "claire_confrontation"
-      }
-    ],
-    "effects": {
-      "time": 10,
-      "danger": 2
-    },
-    "glitch": "intense"
-  },
-  {
-    "id": "dream_denial",
-    "text": [
-      "You select all.",
-      "You delete.",
-      "Empty trash.",
-      "You go back to bed.",
-      "Claire says you're shaking.",
-      "You say it's nothing.",
-      "She takes your hand.",
-      "You hold it very tight.",
-      "For the next twenty years, you are good at holding things tight that are about to slip away.",
-      "You never write code in your sleep again.",
-      "You never have the dream again.",
-      "You never know if that is because you won.",
-      "Or because something stopped trying."
-    ],
-    "choices": [],
-    "ending": "limbo",
-    "glitch": "none"
-  },
-  {
-    "id": "claire_confrontation",
-    "text": [
-      "Claire looks at the screen for a long time.",
-      "\"Did you write this?\"",
-      "\"I don't think so.\"",
-      "She reads it.",
-      "She reads it again.",
-      "Then she says: \"Neo. This looks like... I don't know what this looks like.\"",
-      "She sets down her coffee.",
-      "\"You should probably delete it.\"",
-      "You look at her.",
-      "She means well. She always means well.",
-      "\"Yeah,\" you say. \"You're right.\"",
-      "You sit there for a while.",
-      "The cursor blinks."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Delete it. She's right.",
-        "next": "dream_denial"
-      },
-      {
-        "id": "c2",
-        "label": "Run it anyway.",
-        "next": "the_revelation",
-        "effect": {
-          "belief": 1
-        }
-      }
-    ],
-    "effects": {
-      "time": 5
-    },
-    "glitch": "subtle"
-  },
-  {
-    "id": "the_revelation",
-    "inputType": "mixed",
-    "textPrompt": "What do you do with what you've found?",
-    "text": [
-      "It's a network analysis tool.",
-      "Elegant. Obsessive. It maps traffic patterns you've never thought to look for.",
-      "You let it run against Metacortex's internal logs.",
-      "Everything routes through three server addresses.",
-      "You've worked here for eight years. You have never seen these addresses documented.",
-      "You search internal wikis. Nothing.",
-      "You search external databases. Nothing.",
-      "You dig deeper.",
-      "You should not have dug deeper.",
-      "The addresses resolve to... nothing.",
-      "Not private. Not classified. Not firewalled.",
-      "Not there.",
-      "They are addresses for servers that should not exist.",
-      "You sit in your kitchen at 3 AM and the sunrise finds you still sitting there."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Find Trinity's old contact. Write to her.",
-        "next": "too_late_choice"
-      },
-      {
-        "id": "c2",
-        "label": "Keep the data. Say nothing. Watch and wait.",
-        "next": "revelation_waiting"
-      },
-      {
-        "id": "c3",
-        "label": "Destroy it all. You were better not knowing.",
-        "next": "revelation_suppression"
-      }
-    ],
-    "effects": {
-      "time": 10,
-      "danger": 2
-    },
-    "glitch": "intense"
-  },
-  {
-    "id": "revelation_waiting",
-    "text": [
-      "You keep the notebook in the bottom drawer.",
-      "Under tax documents and old cables.",
-      "Sometimes you take it out.",
-      "The data doesn't change.",
-      "The servers are still not there.",
-      "They will never be there.",
-      "Two months pass.",
-      "You buy a better coffee maker.",
-      "You fall asleep in front of the television sometimes.",
-      "The notebook stays in the drawer.",
-      "You almost throw it away six times.",
-      "You never do.",
-      "At three in the morning, you take it out one last time."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Write to her. You are done waiting.",
-        "next": "too_late_choice"
-      },
-      {
-        "id": "c2",
-        "label": "Put it back. You made your choice a long time ago.",
-        "next": "ending_blue_pill_deep"
-      }
-    ],
-    "effects": {
-      "time": 15
-    },
-    "glitch": "subtle"
-  },
-  {
-    "id": "revelation_suppression",
-    "text": [
-      "You format the drive.",
-      "Three passes. Nothing recoverable.",
-      "You throw the notebook in a dumpster six blocks away.",
-      "You shower.",
-      "You make breakfast.",
-      "The eggs are good.",
-      "You go to work.",
-      "You do not look at server logs.",
-      "You do not look at server logs for the rest of your career.",
-      "You retire at sixty-four.",
-      "At your party, someone asks what your greatest achievement was.",
-      "You say: \"Knowing when to stop.\"",
-      "Everyone laughs.",
-      "You laugh too.",
-      "You are very, very good at laughing."
-    ],
-    "choices": [],
-    "ending": "limbo",
-    "glitch": "none"
-  },
-  {
-    "id": "too_late_choice",
-    "text": [
-      "You find the address from memory.",
-      "You don't know how you remember it. You remember it perfectly.",
-      "Encrypted relay. Eight hops.",
-      "You write three drafts. You delete two.",
-      "The third says: \"I think I made a mistake.\"",
-      "Six words.",
-      "You hover over SEND.",
-      "Outside, a car passes.",
-      "The city breathes.",
-      "Your cursor blinks."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Send it.",
-        "next": "blue_late_awakening"
-      },
-      {
-        "id": "c2",
-        "label": "Delete it. Close the laptop. Go to bed.",
-        "next": "ending_blue_pill_deep"
-      }
-    ],
-    "effects": {
-      "time": 5
-    },
-    "glitch": "intense"
-  },
-  {
-    "id": "blue_late_awakening",
-    "text": [
-      "The reply comes in forty seconds.",
-      "As if she was watching the relay. Waiting.",
-      "\"We know. We've been watching.\"",
-      "Then: \"Neo — Morpheus is gone. He died in custody. Three years ago.\"",
-      "Then: \"The One we needed — we needed him five years ago.\"",
-      "Then: \"The door is still open. But it is almost closed.\"",
-      "You read it four times.",
-      "Then you read it a fifth.",
-      "Then you stand up and walk to your window.",
-      "The city is the same city it always was.",
-      "You know now that it isn't.",
-      "You know now that it never was.",
-      "You close your eyes.",
-      "You type back: \"Tell me where to go.\"",
-      "You are older now. Slower. Five years of softness built into you.",
-      "But the door is open.",
-      "And this time you do not hesitate."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Walk through the door.",
-        "next": "the_unplugging_late"
-      }
-    ],
-    "effects": {
-      "time": 10,
-      "belief": 1,
-      "danger": 2
-    },
-    "glitch": "intense"
-  },
-  {
-    "id": "the_unplugging_late",
-    "text": [
-      "Cold.",
-      "Colder than you expected. Colder than the word cold describes.",
-      "Metal. Tubes. The sound of something that has held you your entire life finally letting go.",
-      "You open your eyes in a body you have used — but never truly owned.",
-      "The lights are harsh. Everything is rust and wire and a silence so complete it has texture.",
-      "Trinity is there.",
-      "She is older too. There are lines around her eyes that weren't there before.",
-      "She doesn't say welcome.",
-      "She says: \"You're here.\"",
-      "Like that's enough.",
-      "Like that might actually be enough.",
-      "You think about the five years.",
-      "You think about the soup.",
-      "You think about Claire, who will wake up tomorrow and find you gone.",
-      "You think about what it costs to arrive somewhere this late.",
-      "Then you sit up.",
-      "And you begin."
-    ],
-    "choices": [],
-    "ending": "escape",
-    "glitch": "subtle"
-  },
-  {
-    "id": "ending_blue_pill_deep",
-    "text": [
-      "You delete it.",
-      "You close the laptop.",
-      "You make coffee.",
-      "You go to bed.",
-      "You sleep, and you do not dream.",
-      "Twenty years later you have a daughter named Sarah and a son named James and a mortgage on a house with a yard.",
-      "You run 5k every morning. Your knees hurt now, but you run.",
-      "You retire at sixty-two with a party and a cake and people who genuinely love you.",
-      "Your grandchildren think you're funny.",
-      "You are, by every measurable standard, happy.",
-      "You never think about the red phone.",
-      "You never think about the word Matrix.",
-      "You never think about what the three server addresses meant.",
-      "You are the perfect prisoner.",
-      "Not because you are kept here.",
-      "Because you stopped wanting to leave.",
-      "The most dangerous thing the Matrix ever did was make peace feel like freedom."
-    ],
-    "choices": [],
-    "ending": "limbo",
-    "glitch": "none"
-  },
-  {
-    "id": "the_unplugging",
-    "text": [
-      "Cold.",
-      "The first thing you feel is cold.",
-      "Then: metal. Tubes. The sound of something releasing.",
-      "You open your eyes in a body you have never used before.",
-      "\"Welcome to the real world.\"",
-      "The lights are harsh. Everything is rust and wire and silence.",
-      "This is what is left of the world."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "\"What is this place?\"",
-        "next": "awakening_eyes_open"
-      }
-    ],
-    "effects": {
-      "danger": 2,
-      "belief": 1
-    }
-  },
-  {
-    "id": "the_construct",
-    "text": [
-      "White. Infinite white.",
-      "\"This is the construct. A loading program.\"",
-      "Everything Tank told you on the ship — the pods, the harvest, the years — exists somewhere behind you now.",
-      "Your body does not exist here. Not yet.",
-      "That is, for a moment, a relief.",
-      "Morpheus stands at the edge of the white.",
-      "He asks you: how do you want to learn?"
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Push hard. You want every program, as fast as they can load.",
-        "next": "training_fast"
-      },
-      {
-        "id": "c2",
-        "label": "Take it slow. You want to understand before you act.",
-        "next": "training_slow"
-      }
-    ],
-    "glitch": "none"
-  },
-  {
-    "id": "training_fast",
-    "text": [
-      "You want more.",
-      "Every program Tank loads — you ask for the next one before it finishes.",
-      "Jiu jitsu. Krav maga. Drunken boxing. Tactical weapons. Flight simulation.",
-      "Tank watches you from behind the monitor. He doesn't say anything for a while.",
-      "Then: \"Most people take weeks, you know.\"",
-      "You don't answer. You're already running the next sequence.",
-      "You feel it — the belief building like pressure behind your eyes.",
-      "You can do anything in here.",
-      "That's the problem.",
-      "In here, you have never been wrong.",
-      "You are starting to forget that out there is different."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Go see the Oracle. You're ready.",
-        "next": "training_fast_spar_01"
-      }
-    ],
-    "effects": {
-      "belief": 2,
-      "danger": 1,
-      "flags": {
-        "trainingFast": 1
-      }
-    },
-    "glitch": "none"
-  },
-  {
-    "id": "training_slow",
-    "text": [
-      "You take it one program at a time.",
-      "Not because you're afraid. Because you want to understand.",
-      "You stop mid-sequence and ask Tank to replay segments at a quarter speed.",
-      "You map the rules before you try to break them.",
-      "Morpheus watches from the door one afternoon and doesn't say anything.",
-      "Later he tells Trinity: \"He's different.\"",
-      "She says: \"Different how?\"",
-      "He thinks about it.",
-      "\"Like he's reading the water before he steps in.\"",
-      "You don't know he said this.",
-      "But you have started to see the seams.",
-      "Small things.",
-      "The way physics hesitates before it catches up.",
-      "The gap between what should happen and what does.",
-      "You write it all down."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "You're ready. Go see the Oracle.",
-        "next": "training_slow_spar_01"
-      }
-    ],
-    "effects": {
-      "belief": 1,
-      "flags": {
-        "trainingSlow": 1
-      }
-    },
-    "glitch": "none"
-  },
-  {
-    "id": "morpheus_captured",
-    "text": [
-      "You come back through the Oracle's neighborhood.",
-      "The connection spikes once — wrong — and then the channel opens.",
-      "Cypher. It was Cypher.",
-      "He made a deal — his re-insertion into the Matrix in exchange for Morpheus.",
-      "Morpheus is in the hands of the Agents now.",
-      "They will break him. Extract the codes.",
-      "Tank is looking at you. Waiting."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "\"We're going in. Load the jump program.\"",
-        "next": "the_rescue"
-      },
-      {
-        "id": "c2",
-        "label": "\"I'm going in alone.\"",
-        "next": "go_alone"
-      },
-      {
-        "id": "c3",
-        "label": "\"Let me talk to the Oracle one more time.\"",
-        "next": "consult_oracle_again"
-      },
-      {
-        "id": "c4",
-        "label": "\"If we go in now, they may already have the codes. We wait.\"",
-        "next": "rescue_hesitation"
-      }
-    ]
-  },
-  {
-    "id": "go_alone",
-    "text": [
-      "\"I'm going alone.\"",
-      "Trinity stares at you. \"That's not happening.\"",
-      "\"They'll be expecting both of us. One person is harder to track.\"",
-      "\"One person is easier to kill.\"",
-      "You argue for eleven minutes.",
-      "You go anyway.",
-      "The lobby is different when you're alone.",
-      "The marble sounds different underfoot.",
-      "The guards are real in a way they weren't before — they have weight.",
-      "You take three hits you shouldn't have taken.",
-      "You find Morpheus on the thirty-first floor.",
-      "He looks at you with something you'll think about later.",
-      "Something that looks almost like relief.",
-      "\"You came alone,\" he says.",
-      "\"Yes.\"",
-      "\"That was stupid.\"",
-      "\"I know.\"",
-      "He almost smiles.",
-      "\"Let's go.\""
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Get him out.",
-        "next": "agent_smith"
-      }
-    ],
-    "effects": {
-      "danger": 3,
-      "belief": 1
-    },
-    "glitch": "none"
-  },
-  {
-    "id": "consult_oracle_again",
-    "text": [
-      "You go back.",
-      "Her kitchen. The smell of cookies. The same chair.",
-      "She looks at you like she knew you'd come.",
-      "\"I know why you're here,\" she says.",
-      "\"I need to understand why I'm going to go in after him.\"",
-      "She pours tea. Sets a cup in front of you.",
-      "\"You already know why.\"",
-      "\"Tell me anyway.\"",
-      "She's quiet for a moment.",
-      "Then she says something.",
-      "What she says depends on who you've become."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "\"Because he believed in me first.\"",
-        "next": "the_rescue",
-        "condition": "belief >= 2",
-        "effect": {
-          "belief": 1
-        }
-      },
-      {
-        "id": "c2",
-        "label": "\"Because if I don't go, who does?\"",
-        "next": "the_rescue",
-        "effect": {
-          "belief": 1
-        }
-      },
-      {
-        "id": "c3",
-        "label": "\"I don't know. I just know I have to.\"",
-        "next": "the_rescue"
-      }
-    ],
-    "glitch": "none"
-  },
-  {
-    "id": "the_rescue",
-    "text": [
-      "The lobby.",
-      "Marble floors. Security station. Cameras.",
-      "You move like something trained for exactly this.",
-      "Because you have been.",
-      "Floors blur. You find him.",
-      "Now there is only one thing standing between Morpheus and the exit."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Push forward.",
-        "next": "lobby_entrance"
-      }
-    ],
-    "effects": {
-      "danger": 3
-    }
-  },
-  {
-    "id": "agent_smith",
-    "text": [
-      "He is waiting on the roof.",
-      "He moves faster than physics should allow.",
-      "\"Mr. Anderson.\"",
-      "He catches your strike before it lands. His grip tightens beyond what the simulation should permit.",
-      "\"I want you to consider something. Every choice you have made — every turn, every door — has led you here. To me.\"",
-      "\"That is not coincidence, Mr. Anderson. That is inevitability.\"",
-      "The city is far below. The wind is very cold.",
-      "You look at his hand holding your fist.",
-      "And you think about spoons."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "\"My name... is Neo.\"",
-        "next": "neo_defiance",
-        "condition": "belief >= 2"
-      },
-      {
-        "id": "c2",
-        "label": "You know his pattern. Wait for the gap.",
-        "next": "the_calculation",
-        "condition": "flags.trainingSlow >= 1"
-      },
-      {
-        "id": "c3",
-        "label": "Move first. You've seen this a thousand times.",
-        "next": "the_dodge",
-        "condition": "flags.trainingFast >= 1"
-      },
-      {
-        "id": "c4",
-        "label": "Fight your way to the exit.",
-        "next": "smith_grip_wrong"
-      },
-      {
-        "id": "c5",
-        "label": "Run.",
-        "next": "smith_grip_wrong",
-        "effect": {
-          "danger": 1
-        }
-      }
-    ]
-  },
-  {
-    "id": "the_dodge",
-    "text": [
-      "Smith moves.",
-      "You move first.",
-      "You've seen this in the construct — the arc of a strike, the weight shift, the tell.",
-      "You dodge.",
-      "Too early.",
-      "Smith doesn't go where you predicted.",
-      "He adjusts mid-motion. Something no human body should do.",
-      "His fist finds your jaw.",
-      "The roof tiles are hard. The sky above them is very blue.",
-      "You lie there for a moment that stretches.",
-      "He stands over you.",
-      "\"Interesting,\" he says. The word sounds like a file being created.",
-      "You think: I was so sure.",
-      "You think: being sure is not the same as being right.",
-      "You get up anyway."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Get up. You know his pattern now. Finish it.",
-        "next": "ending_escape",
-        "condition": "belief >= 2"
-      },
-      {
-        "id": "c2",
-        "label": "Get to the phone. Now.",
-        "next": "the_phone"
-      }
-    ],
-    "effects": {
-      "danger": 2,
-      "belief": 1
-    },
-    "glitch": "subtle"
-  },
-  {
-    "id": "the_calculation",
-    "text": [
-      "Smith moves.",
-      "You watch him move.",
-      "Not instinct. Not training. Recognition.",
-      "The gap you wrote down weeks ago on the Nebuchadnezzar.",
-      "The forty-millisecond hesitation between intention and execution — the physics of the simulation catching up to itself.",
-      "Every Agent has it.",
-      "You waited for it in a notebook before you knew what you were waiting for.",
-      "It opens.",
-      "You step through it.",
-      "Smith's strike passes through the air where you were.",
-      "Your palm finds his sternum.",
-      "The sound he makes is not a human sound.",
-      "He staggers. You don't.",
-      "The fight is short after that.",
-      "Not because you are stronger.",
-      "Because you disagreed with Morpheus about whether to understand the rules,",
-      "and you were right.",
-      "That is a very specific kind of satisfaction, arriving in a very strange moment.",
-      "You let yourself have it.",
-      "Then you move."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Press forward.",
-        "next": "the_phone"
-      }
-    ],
-    "effects": {
-      "belief": 2
-    },
-    "glitch": "none"
-  },
-  {
-    "id": "the_phone",
-    "text": [
-      "The phone is ringing.",
-      "Smith is down. But the building isn't finished.",
-      "An Agent steps from the body of a man in a grey suit — the lobby guard who was behind you — his face shifting mid-stride.",
-      "40 feet.",
-      "The phone keeps ringing.",
-      "30 feet.",
-      "20 feet."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Answer it.",
-        "next": "ending_escape"
-      },
-      {
-        "id": "c2",
-        "label": "Turn back. If you die here, everything ends with you.",
-        "next": "ending_captured",
-        "condition": "belief <= 1"
-      }
-    ]
-  },
-  {
-    "id": "ending_escape",
-    "text": [
-      "The city cracks open.",
-      "You see it — for the first time, you actually see it.",
-      "Not the buildings. Not the people.",
-      "The code.",
-      "Cascading green. Everything made of it.",
-      "The woman at the corner — code. The man with the grocery bag — code.",
-      "The child watching traffic from a window — code, running on machines you will spend the rest of your life trying to stop.",
-      "Twenty-six years of this.",
-      "You think about Thomas Anderson.",
-      "He had bad coffee and good code and soup that was genuinely excellent.",
-      "He was real. That matters.",
-      "He deserved to know what he was.",
-      "He knows now.",
-      "You understand what Morpheus meant.",
-      "What the Oracle knew.",
-      "What it cost to arrive here, and what it was for.",
-      "You are not the One because someone told you.",
-      "You are the One because you stopped waiting to be told."
-    ],
-    "choices": [],
-    "ending": "escape"
-  },
-  {
-    "id": "ending_captured",
-    "text": [
-      "SYSTEM SECURE.",
-      "The Agents are very efficient.",
-      "It does not hurt. That is almost the worst part.",
-      "Somewhere in a server farm the size of a country, a process completes.",
-      "Thomas A. Anderson is reintegrated.",
-      "Mr. Anderson returns to his desk on floor 7, cubicle 9.",
-      "The Matrix continues.",
-      "It always continues."
-    ],
-    "choices": [],
-    "ending": "captured"
-  },
-  {
-    "id": "ending_limbo",
-    "text": [
-      "2:13 AM.",
-      "It has been 2:13 AM for longer than you can calculate.",
-      "You know what you were supposed to do.",
-      "You always knew.",
-      "But knowing and believing are different countries.",
-      "You could not find the border crossing in time.",
-      "Morpheus offered you a door.",
-      "You kept choosing the wall.",
-      "The door does not come twice."
-    ],
-    "choices": [],
-    "ending": "limbo"
-  },
-  {
     "id": "awakening_eyes_open",
     "text": [
       "Light.",
@@ -1489,9 +15,7 @@
         "id": "c1",
         "label": "Force your eyes open. Take it all in.",
         "next": "awakening_force_sight",
-        "effect": {
-          "belief": 1
-        }
+        "effect": { "belief": 1 }
       },
       {
         "id": "c2",
@@ -1499,13 +23,12 @@
         "next": "awakening_retreat_dark"
       }
     ],
-    "effects": {
-      "danger": 1
-    },
+    "effects": { "danger": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "awakening_force_sight",
     "text": [
@@ -1527,14 +50,12 @@
         "next": "awakening_stand_attempt"
       }
     ],
-    "effects": {
-      "belief": 1,
-      "time": 5
-    },
+    "effects": { "belief": 1, "time": 5 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "awakening_retreat_dark",
     "text": [
@@ -1554,20 +75,15 @@
         "id": "c1",
         "label": "Remember that number. Then try to sit up.",
         "next": "awakening_stand_attempt",
-        "effect": {
-          "flags": {
-            "bulkheadNumber": 1
-          }
-        }
+        "effect": { "flags": { "bulkheadNumber": 1 } }
       }
     ],
-    "effects": {
-      "time": 10
-    },
+    "effects": { "time": 10 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "awakening_stand_attempt",
     "text": [
@@ -1592,13 +108,12 @@
         "next": "awakening_refuse_help"
       }
     ],
-    "effects": {
-      "time": 5
-    },
+    "effects": { "time": 5 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "awakening_accept_help",
     "text": [
@@ -1619,13 +134,12 @@
         "next": "awakening_the_goop"
       }
     ],
-    "effects": {
-      "time": 5
-    },
+    "effects": { "time": 5 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "awakening_refuse_help",
     "text": [
@@ -1649,14 +163,12 @@
         "next": "awakening_the_goop"
       }
     ],
-    "effects": {
-      "belief": 1,
-      "time": 15
-    },
+    "effects": { "belief": 1, "time": 15 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "awakening_the_goop",
     "text": [
@@ -1678,13 +190,12 @@
         "next": "awakening_refuse_goop"
       }
     ],
-    "effects": {
-      "time": 5
-    },
+    "effects": { "time": 5 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "awakening_eat_goop",
     "text": [
@@ -1711,13 +222,12 @@
         "next": "awakening_go_silent"
       }
     ],
-    "effects": {
-      "time": 10
-    },
+    "effects": { "time": 10 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "awakening_refuse_goop",
     "text": [
@@ -1745,14 +255,12 @@
         "next": "awakening_go_silent"
       }
     ],
-    "effects": {
-      "time": 10,
-      "belief": 1
-    },
+    "effects": { "time": 10, "belief": 1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "awakening_how_long",
     "text": [
@@ -1775,14 +283,12 @@
         "next": "awakening_the_mirror"
       }
     ],
-    "effects": {
-      "time": 10,
-      "belief": 1
-    },
+    "effects": { "time": 10, "belief": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "awakening_go_silent",
     "text": [
@@ -1807,14 +313,12 @@
         "next": "awakening_the_mirror"
       }
     ],
-    "effects": {
-      "belief": 1,
-      "time": 15
-    },
+    "effects": { "belief": 1, "time": 15 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "awakening_the_mirror",
     "text": [
@@ -1842,6 +346,7 @@
     "inputType": "mixed",
     "textPrompt": "You are looking at your real face for the first time. What do you say?"
   },
+
   {
     "id": "awakening_mirror_response",
     "text": [
@@ -1871,13 +376,12 @@
         "next": "awakening_construct_question_die"
       }
     ],
-    "effects": {
-      "time": 5
-    },
+    "effects": { "time": 5 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "awakening_construct_question_do",
     "text": [
@@ -1898,13 +402,12 @@
         "next": "the_construct"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "awakening_construct_question_cant",
     "text": [
@@ -1925,13 +428,12 @@
         "next": "the_construct"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "awakening_construct_question_die",
     "text": [
@@ -1954,14 +456,12 @@
         "next": "the_construct"
       }
     ],
-    "effects": {
-      "danger": 1,
-      "belief": 1
-    },
+    "effects": { "danger": 1, "belief": 1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_fast_spar_01",
     "text": [
@@ -1987,13 +487,12 @@
         "next": "training_fast_spar_humbled"
       }
     ],
-    "effects": {
-      "danger": 1
-    },
+    "effects": { "danger": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_fast_spar_angry",
     "text": [
@@ -2017,14 +516,12 @@
         "next": "training_fast_weapons"
       }
     ],
-    "effects": {
-      "belief": 1,
-      "danger": 1
-    },
+    "effects": { "belief": 1, "danger": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_fast_spar_humbled",
     "text": [
@@ -2046,13 +543,12 @@
         "next": "training_fast_weapons"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_fast_weapons",
     "text": [
@@ -2081,13 +577,12 @@
         "next": "training_fast_rooftop"
       }
     ],
-    "effects": {
-      "time": 10
-    },
+    "effects": { "time": 10 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_fast_push",
     "text": [
@@ -2111,14 +606,12 @@
         "next": "training_fast_rooftop"
       }
     ],
-    "effects": {
-      "belief": 1,
-      "danger": 1
-    },
+    "effects": { "belief": 1, "danger": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_fast_rooftop",
     "text": [
@@ -2148,6 +641,7 @@
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_fast_rooftop_hesitate",
     "text": [
@@ -2173,14 +667,12 @@
         "next": "oracle_arrival"
       }
     ],
-    "effects": {
-      "belief": -1,
-      "time": 15
-    },
+    "effects": { "belief": -1, "time": 15 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_fast_rooftop_run",
     "text": [
@@ -2206,16 +698,12 @@
         "next": "training_fast_code_bleed"
       }
     ],
-    "effects": {
-      "belief": 2,
-      "flags": {
-        "trainingFast": 1
-      }
-    },
+    "effects": { "belief": 2, "flags": { "trainingFast": 1 } },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_fast_code_bleed",
     "text": [
@@ -2242,13 +730,12 @@
         "next": "training_fast_study_alone"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_fast_tell_morpheus",
     "text": [
@@ -2272,13 +759,12 @@
         "next": "oracle_arrival"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_fast_study_alone",
     "text": [
@@ -2299,16 +785,12 @@
         "next": "oracle_arrival"
       }
     ],
-    "effects": {
-      "belief": 1,
-      "flags": {
-        "codeBleedSeen": 1
-      }
-    },
+    "effects": { "belief": 1, "flags": { "codeBleedSeen": 1 } },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_slow_spar_01",
     "text": [
@@ -2336,16 +818,12 @@
         "next": "training_slow_morpheus_impressed"
       }
     ],
-    "effects": {
-      "belief": 1,
-      "flags": {
-        "trainingSlow": 1
-      }
-    },
+    "effects": { "belief": 1, "flags": { "trainingSlow": 1 } },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_slow_morpheus_impressed",
     "text": [
@@ -2367,13 +845,12 @@
         "next": "training_slow_replay"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_slow_replay",
     "text": [
@@ -2399,16 +876,12 @@
         "next": "training_slow_weapons_choice"
       }
     ],
-    "effects": {
-      "belief": 1,
-      "flags": {
-        "physicsGap": 1
-      }
-    },
+    "effects": { "belief": 1, "flags": { "physicsGap": 1 } },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_slow_weapons_choice",
     "text": [
@@ -2441,6 +914,7 @@
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_slow_hold_ground",
     "text": [
@@ -2464,13 +938,12 @@
         "next": "training_slow_rooftop"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_slow_give_in",
     "text": [
@@ -2494,14 +967,12 @@
         "next": "training_slow_rooftop"
       }
     ],
-    "effects": {
-      "danger": 1,
-      "time": 10
-    },
+    "effects": { "danger": 1, "time": 10 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_slow_rooftop",
     "text": [
@@ -2529,13 +1000,12 @@
         "next": "training_slow_tell_horizon"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_slow_jump",
     "text": [
@@ -2558,13 +1028,12 @@
         "next": "oracle_arrival"
       }
     ],
-    "effects": {
-      "belief": 2
-    },
+    "effects": { "belief": 2 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "training_slow_tell_horizon",
     "text": [
@@ -2589,16 +1058,12 @@
         "next": "oracle_arrival"
       }
     ],
-    "effects": {
-      "belief": 1,
-      "flags": {
-        "oracleInsight": 1
-      }
-    },
+    "effects": { "belief": 1, "flags": { "oracleInsight": 1 } },
     "glitch": "intense",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "oracle_arrival",
     "text": [
@@ -2622,11 +1087,7 @@
         "id": "c2",
         "label": "Log the patterns. Take a moment to look.",
         "next": "oracle_log_patterns",
-        "effect": {
-          "flags": {
-            "neighborhoodLogged": 1
-          }
-        }
+        "effect": { "flags": { "neighborhoodLogged": 1 } }
       }
     ],
     "effects": {},
@@ -2634,6 +1095,7 @@
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "oracle_log_patterns",
     "text": [
@@ -2658,13 +1120,12 @@
         "next": "oracle_waiting_room"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "oracle_waiting_room",
     "text": [
@@ -2694,9 +1155,7 @@
         "label": "Pick up a spoon. Try to bend it.",
         "next": "oracle_spoon_try",
         "condition": "belief >= 2",
-        "effect": {
-          "belief": 1
-        }
+        "effect": { "belief": 1 }
       }
     ],
     "effects": {},
@@ -2704,6 +1163,7 @@
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "oracle_spoon_question",
     "text": [
@@ -2728,13 +1188,12 @@
         "next": "oracle_kitchen"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "oracle_spoon_watch",
     "text": [
@@ -2757,13 +1216,12 @@
         "next": "oracle_kitchen"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "oracle_spoon_try",
     "text": [
@@ -2787,16 +1245,12 @@
         "next": "oracle_kitchen"
       }
     ],
-    "effects": {
-      "belief": 1,
-      "flags": {
-        "spoonBent": 1
-      }
-    },
+    "effects": { "belief": 1, "flags": { "spoonBent": 1 } },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "oracle_kitchen",
     "text": [
@@ -2828,6 +1282,7 @@
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "oracle_neo_speaks_first",
     "text": [
@@ -2855,6 +1310,7 @@
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "oracle_oracle_speaks",
     "text": [
@@ -2878,13 +1334,12 @@
         "next": "oracle_the_gift"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "oracle_the_gift",
     "text": [
@@ -2909,6 +1364,7 @@
     "inputType": "mixed",
     "textPrompt": "The Oracle is watching you. \"What do you think you are?\""
   },
+
   {
     "id": "oracle_what_are_you",
     "text": [
@@ -2937,6 +1393,7 @@
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "oracle_the_vase",
     "text": [
@@ -2974,6 +1431,7 @@
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "oracle_how_did_you_know",
     "text": [
@@ -2996,13 +1454,12 @@
         "next": "oracle_morpheus_belief"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "oracle_morpheus_belief",
     "text": [
@@ -3036,6 +1493,7 @@
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "oracle_must_save_morpheus",
     "text": [
@@ -3060,16 +1518,12 @@
         "next": "cypher_unease_ship"
       }
     ],
-    "effects": {
-      "belief": 1,
-      "flags": {
-        "mustSaveMorpheus": 1
-      }
-    },
+    "effects": { "belief": 1, "flags": { "mustSaveMorpheus": 1 } },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "oracle_what_should_i_do",
     "text": [
@@ -3091,16 +1545,12 @@
         "next": "cypher_unease_ship"
       }
     ],
-    "effects": {
-      "belief": 1,
-      "flags": {
-        "oracleCypherWarning": 1
-      }
-    },
+    "effects": { "belief": 1, "flags": { "oracleCypherWarning": 1 } },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "oracle_sit_with_it",
     "text": [
@@ -3126,13 +1576,12 @@
         "next": "cypher_unease_ship"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "cypher_unease_ship",
     "text": [
@@ -3168,6 +1617,7 @@
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "cypher_confront_choice",
     "text": [
@@ -3193,15 +1643,12 @@
         "next": "cypher_find_trinity"
       }
     ],
-    "effects": {
-      "flags": {
-        "cypherSuspect": 1
-      }
-    },
+    "effects": { "flags": { "cypherSuspect": 1 } },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "cypher_watch",
     "text": [
@@ -3225,16 +1672,12 @@
         "next": "cypher_find_trinity"
       }
     ],
-    "effects": {
-      "belief": 1,
-      "flags": {
-        "cypherSuspect": 1
-      }
-    },
+    "effects": { "belief": 1, "flags": { "cypherSuspect": 1 } },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "cypher_leave_then_return",
     "text": [
@@ -3259,17 +1702,12 @@
         "next": "cypher_find_trinity"
       }
     ],
-    "effects": {
-      "danger": 1,
-      "flags": {
-        "cypherSuspect": 1,
-        "cypherChip": 1
-      }
-    },
+    "effects": { "danger": 1, "flags": { "cypherSuspect": 1, "cypherChip": 1 } },
     "glitch": "intense",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "cypher_find_trinity",
     "text": [
@@ -3307,6 +1745,7 @@
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "cypher_warn_trinity",
     "text": [
@@ -3333,16 +1772,12 @@
         "next": "cypher_jackIn_moment"
       }
     ],
-    "effects": {
-      "belief": 1,
-      "flags": {
-        "trinityWarned": 1
-      }
-    },
+    "effects": { "belief": 1, "flags": { "trinityWarned": 1 } },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "cypher_trinity_history",
     "text": [
@@ -3370,6 +1805,7 @@
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "cypher_jackIn_moment",
     "text": [
@@ -3399,13 +1835,12 @@
         "next": "morpheus_captured"
       }
     ],
-    "effects": {
-      "danger": 1
-    },
+    "effects": { "danger": 1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "cypher_jackIn_confront",
     "text": [
@@ -3432,32 +1867,22 @@
         "next": "morpheus_captured"
       }
     ],
-    "effects": {
-      "danger": 1,
-      "flags": {
-        "cypherSuspect": 1
-      }
-    },
+    "effects": { "danger": 1, "flags": { "cypherSuspect": 1 } },
     "glitch": "intense",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "lobby_entrance",
     "text": [
       "The lobby.",
-      "Marble floors. Six guards behind a security station.",
-      "The specific white noise of an institutional building on a Tuesday.",
-      "You push through the revolving door.",
-      "The air inside is fifteen degrees cooler. Someone spent money on this building.",
-      "Someone decided that marble communicated authority. That conditioned air communicated control.",
-      "Someone who is not here right now.",
-      "You think: this is all code. The marble is code. The guards are code.",
-      "You also think: they are people. They will be unconscious in ninety seconds but right now they are people.",
-      "They have the smell of real lunches. One has a wedding ring.",
-      "You file it. Both things can be true.",
-      "Trinity is beside you. She says nothing.",
-      "Neither do you.",
+      "Marble floors. High ceilings. The specific white noise of an institutional building in the middle of the day.",
+      "Six guards at the security station.",
+      "You and Trinity walk through the revolving door.",
+      "The glass is heavy. The air inside is conditioned to a precise temperature.",
+      "Everything is very clean.",
+      "Everything is very heavily armed.",
       "Six guards. Two cameras. One metal detector."
     ],
     "choices": [
@@ -3477,23 +1902,19 @@
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "lobby_quiet_approach",
     "text": [
       "You move along the columns.",
-      "Trinity takes the right without being asked.",
-      "The first guard is watching the door — watching for the threat he's been trained to expect,",
-      "which is not two people moving quietly along the walls.",
-      "He doesn't see you until he's already down.",
-      "Second turns at the sound. Trinity is already there.",
-      "Third, fourth.",
-      "You notice things you weren't told to notice.",
-      "Guard three has a stance that favors his right knee.",
-      "Guard four looks exactly like someone's father.",
-      "Guard four also looks exactly like a subroutine.",
-      "Both things are true. You keep moving.",
+      "Trinity takes the right. You take the left.",
+      "The first guard doesn't know anything is wrong until he's already on the floor.",
+      "The second turns. Sees you. Starts to shout.",
+      "Trinity is faster.",
+      "The third, fourth — efficiency. Clean. Professional.",
       "The fifth is at the radio.",
-      "His hand is on it. He's looking at you.",
+      "His hand is on it.",
+      "He's looking at you.",
       "His thumb is moving toward the call button."
     ],
     "choices": [
@@ -3513,32 +1934,25 @@
         "next": "lobby_quiet_alarm"
       }
     ],
-    "effects": {
-      "danger": 1,
-      "flags": {
-        "lobbyQuiet": 1
-      }
-    },
+    "effects": { "danger": 1, "flags": { "lobbyQuiet": 1 } },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "lobby_quiet_disarm",
     "text": [
-      "Your wrist catches his before the thumb connects.",
+      "You move.",
+      "Your wrist catches his before his thumb connects.",
       "The radio clatters to the marble.",
-      "He's down.",
-      "The sixth guard sees everything. He turns toward the stairs.",
-      "Trinity handles him before he completes the turn.",
+      "He's down a second later.",
+      "The sixth guard by the elevator sees everything.",
+      "He is fast. He is also running toward the stairs, not away.",
+      "Trinity handles him before he makes the second step.",
       "Silence.",
-      "Six people breathing on a marble floor.",
-      "You stand in the middle of it.",
-      "Three weeks ago you were writing code in a cubicle on the seventh floor.",
-      "You were getting soup for lunch because the soup was good.",
-      "That person and this person are the same person.",
-      "You don't know what to do with that yet. So you don't do anything with it.",
-      "Trinity is already at the elevator.",
+      "Marble. Six bodies on the floor, breathing.",
+      "Trinity looks at you.",
       "\"Elevator.\"",
       "\"Elevator.\""
     ],
@@ -3549,13 +1963,12 @@
         "next": "lobby_upper_floor"
       }
     ],
-    "effects": {
-      "danger": 1
-    },
+    "effects": { "danger": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "lobby_quiet_neutralize",
     "text": [
@@ -3584,13 +1997,12 @@
         "next": "lobby_stairs"
       }
     ],
-    "effects": {
-      "danger": 1
-    },
+    "effects": { "danger": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "lobby_quiet_alarm",
     "text": [
@@ -3611,13 +2023,12 @@
         "next": "lobby_upper_floor"
       }
     ],
-    "effects": {
-      "danger": 2
-    },
+    "effects": { "danger": 2 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "lobby_loud_approach",
     "text": [
@@ -3644,13 +2055,12 @@
         "next": "lobby_loud_holdout_words"
       }
     ],
-    "effects": {
-      "danger": 3
-    },
+    "effects": { "danger": 3 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "lobby_loud_holdout_physical",
     "text": [
@@ -3673,13 +2083,12 @@
         "next": "lobby_upper_floor"
       }
     ],
-    "effects": {
-      "danger": 1
-    },
+    "effects": { "danger": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "lobby_loud_holdout_words",
     "text": [
@@ -3706,25 +2115,24 @@
         "next": "lobby_upper_floor"
       }
     ],
-    "effects": {
-      "danger": 1
-    },
+    "effects": { "danger": 1 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "lobby_upper_floor",
     "text": [
+      "The upper floor.",
       "The elevator opens on a hallway that smells like carpet cleaner and institutional nothing.",
-      "Two guards visible. A third whose footsteps you can hear but not yet place.",
-      "You look at the floor plan the way you look at code.",
-      "Guard A pauses four seconds at the east window, every four minutes.",
-      "Guard B's route has a gap at the northwest corner — the plan assumed three guards, there are two.",
-      "The camera on the junction has a blind spot wide enough to walk through.",
-      "The forty-millisecond gap, applied to building security.",
-      "You see it.",
-      "All of it."
+      "There are choices here.",
+      "The stairs continue up. The elevator is logged now.",
+      "If flags.physicsGap and flags.trainingSlow — you can see it.",
+      "The floor plan has a pattern. The guards on this floor move on a rotation you could plot.",
+      "You can see it the way you see code.",
+      "The forty millisecond gap, applied to building security.",
+      "There is a route through that avoids contact entirely."
     ],
     "choices": [
       {
@@ -3737,9 +2145,7 @@
         "label": "Move through the code. Route around them entirely.",
         "next": "lobby_ghost_route",
         "condition": "flags.physicsGap >= 1",
-        "effect": {
-          "belief": 1
-        }
+        "effect": { "belief": 1 }
       }
     ],
     "effects": {},
@@ -3747,27 +2153,23 @@
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "lobby_stairs",
     "text": [
-      "Concrete stairs. Echoing.",
+      "The stairs.",
+      "Concrete. Echoing.",
       "You move floor by floor.",
-      "On the nineteenth, a guard who is awake and paying attention.",
-      "He sees you the same second you see him.",
-      "It is not like the construct.",
-      "In the construct you knew you were going to be fine.",
-      "Here, his eyes are specific. Afraid in a specific way.",
-      "You understand that fear now in a way you didn't three weeks ago,",
-      "because three weeks ago you didn't know what was real.",
-      "Eleven seconds.",
+      "Trinity takes the inside. You take the outside.",
+      "On the nineteenth floor there is a guard who is awake and paying attention.",
+      "He sees you at the same moment you see him.",
+      "Eleven seconds of close-quarters problem-solving.",
       "You reach the thirty-first floor breathing hard.",
-      "Morpheus is behind the door at the end of the hall.",
-      "Two guards between you and it.",
-      "Trinity is beside you.",
-      "You've done this once already, six floors down.",
-      "You know how she moves. She knows how you move.",
-      "That is not nothing.",
-      "That took twenty seconds to become true."
+      "Morpheus is behind a heavy door.",
+      "Two guards in the hall.",
+      "Trinity looks at you.",
+      "You look at Trinity.",
+      "You've done this before. Just now, in the lobby. You know how you each move."
     ],
     "choices": [
       {
@@ -3776,33 +2178,30 @@
         "next": "agent_smith"
       }
     ],
-    "effects": {
-      "danger": 2
-    },
+    "effects": { "danger": 2 },
     "glitch": "none",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "lobby_ghost_route",
     "text": [
       "You see it.",
-      "Not strategy. Seeing.",
-      "Guard A pauses at the east window every four minutes, seven seconds. Not habit — parameter.",
+      "The rotation.",
+      "Guard A pauses at the east window every four minutes, seven seconds.",
       "Guard B's route has a seventeen-second gap at the northwest corner.",
-      "The original security plan assumed a third guard in that position.",
-      "There is no third guard. There is only the gap where one should be.",
-      "The camera on the junction has a blind spot the width of a doorway.",
+      "The camera on the second junction has a blind spot.",
       "You explain it to Trinity in twenty words.",
       "She listens. Nods once.",
-      "You move through the building the way water finds the lowest path.",
-      "No contact. No sound. No one looks up.",
-      "The thirty-first floor arrives clean.",
-      "Trinity looks at you with an expression you haven't seen before.",
+      "You move through the building like water finding the lowest path.",
+      "No one sees you.",
+      "No one hears you.",
+      "You reach the thirty-first floor unmarked.",
+      "Trinity looks at you like you've done something that shouldn't be possible.",
       "\"How did you—\"",
       "\"Physics,\" you say.",
-      "She doesn't push it.",
-      "You are starting to understand what that word means."
+      "She doesn't push it."
     ],
     "choices": [
       {
@@ -3811,14 +2210,12 @@
         "next": "agent_smith"
       }
     ],
-    "effects": {
-      "belief": 1,
-      "danger": -1
-    },
+    "effects": { "belief": 1, "danger": -1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "smith_grip_wrong",
     "text": [
@@ -3850,13 +2247,12 @@
         "next": "smith_go_still"
       }
     ],
-    "effects": {
-      "danger": 2
-    },
+    "effects": { "danger": 2 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "smith_fight_through",
     "text": [
@@ -3885,14 +2281,12 @@
         "next": "smith_monologue"
       }
     ],
-    "effects": {
-      "danger": 2,
-      "belief": 1
-    },
+    "effects": { "danger": 2, "belief": 1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "smith_understand_grip",
     "text": [
@@ -3919,13 +2313,12 @@
         "next": "smith_monologue"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "smith_go_still",
     "text": [
@@ -3949,13 +2342,12 @@
         "next": "smith_monologue"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "smith_monologue",
     "text": [
@@ -3993,6 +2385,7 @@
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "smith_response_program",
     "text": [
@@ -4016,13 +2409,12 @@
         "next": "smith_first_bullet"
       }
     ],
-    "effects": {
-      "danger": 1
-    },
+    "effects": { "danger": 1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "smith_response_silence",
     "text": [
@@ -4045,13 +2437,12 @@
         "next": "smith_first_bullet"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "smith_response_laugh",
     "text": [
@@ -4074,14 +2465,12 @@
         "next": "smith_first_bullet"
       }
     ],
-    "effects": {
-      "belief": 1,
-      "danger": -1
-    },
+    "effects": { "belief": 1, "danger": -1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "smith_first_bullet",
     "text": [
@@ -4117,13 +2506,12 @@
         "next": "smith_study_crack"
       }
     ],
-    "effects": {
-      "danger": 2
-    },
+    "effects": { "danger": 2 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "smith_look_at_wound",
     "text": [
@@ -4147,13 +2535,12 @@
         "next": "smith_phone_run"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "smith_study_crack",
     "text": [
@@ -4184,18 +2571,15 @@
         "label": "Stop running. Turn around.",
         "next": "the_one_moment",
         "condition": "belief >= 4",
-        "effect": {
-          "belief": 1
-        }
+        "effect": { "belief": 1 }
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "intense",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "smith_phone_run",
     "text": [
@@ -4222,13 +2606,12 @@
         "next": "smith_alt_exit"
       }
     ],
-    "effects": {
-      "danger": 2
-    },
+    "effects": { "danger": 2 },
     "glitch": "intense",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "smith_alt_exit",
     "text": [
@@ -4253,13 +2636,12 @@
         "next": "ending_escape"
       }
     ],
-    "effects": {
-      "belief": 1
-    },
+    "effects": { "belief": 1 },
     "glitch": "subtle",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "the_one_moment",
     "text": [
@@ -4293,13 +2675,12 @@
         "next": "the_one_speak"
       }
     ],
-    "effects": {
-      "belief": 2
-    },
+    "effects": { "belief": 2 },
     "glitch": "extreme",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "the_one_reach",
     "text": [
@@ -4328,13 +2709,12 @@
         "next": "the_one_smith_silent"
       }
     ],
-    "effects": {
-      "belief": 2
-    },
+    "effects": { "belief": 2 },
     "glitch": "extreme",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "the_one_speak",
     "text": [
@@ -4361,13 +2741,12 @@
         "next": "the_one_smith_silent"
       }
     ],
-    "effects": {
-      "belief": 2
-    },
+    "effects": { "belief": 2 },
     "glitch": "extreme",
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "the_one_smith_silent",
     "text": [
@@ -4405,6 +2784,7 @@
     "ending": null,
     "inputType": "choices"
   },
+
   {
     "id": "the_one_its_over",
     "text": [
@@ -4430,6 +2810,7 @@
     "ending": "escape",
     "inputType": "choices"
   },
+
   {
     "id": "the_one_walk_past",
     "text": [
@@ -4461,6 +2842,7 @@
     "ending": "escape",
     "inputType": "choices"
   },
+
   {
     "id": "the_one_eye_contact",
     "text": [
@@ -4489,185 +2871,5 @@
     "glitch": "none",
     "ending": "escape",
     "inputType": "choices"
-  },
-  {
-    "id": "server_room_obsession",
-    "text": [
-      "You watch it.",
-      "Three nights. Four.",
-      "The process runs continuously. No spikes. No output. No purpose you can identify.",
-      "It does not touch the filesystem. It does not open network connections.",
-      "It simply runs. Patient. Like something waiting.",
-      "You start watching other things.",
-      "The routing tables. The internal DNS. The timestamp logs.",
-      "There are patterns here that have no author.",
-      "You have worked in this building for eight years.",
-      "You have never seen these patterns.",
-      "You fill half a notebook before you realize you have been doing it.",
-      "You are not sure when you started carrying a notebook."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Keep going. You need to see where this leads.",
-        "next": "the_investigation"
-      },
-      {
-        "id": "c2",
-        "label": "Stop. Log off. Go home. This is not your job.",
-        "next": "meeting_trinity_again"
-      }
-    ],
-    "effects": {
-      "time": 20,
-      "belief": 1,
-      "danger": 1
-    },
-    "glitch": "subtle"
-  },
-  {
-    "id": "neo_defiance",
-    "text": [
-      "You say it.",
-      "\"My name... is Neo.\"",
-      "Smith pauses.",
-      "One half-second of something you cannot name.",
-      "Then he hits you anyway.",
-      "Hard. The physics of it is real in a way training never was.",
-      "The city tilts. The roof comes up.",
-      "You are lying on concrete, looking at a sky you were born under and never saw.",
-      "Smith stands over you.",
-      "He is saying something. You can't hear it.",
-      "You can hear Trinity's voice in your earpiece.",
-      "She is saying your name.",
-      "\"Neo.\""
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "Get up.",
-        "next": "neo_death",
-        "effect": {
-          "belief": 1
-        }
-      },
-      {
-        "id": "c2",
-        "label": "Don't move. Let him finish it.",
-        "next": "neo_death"
-      }
-    ],
-    "effects": {
-      "danger": 3
-    },
-    "glitch": "intense"
-  },
-  {
-    "id": "neo_death",
-    "text": [
-      "Agent Smith fires.",
-      "Point blank.",
-      "The body you have spent twenty-six years inhabiting does what bodies do.",
-      "It stops.",
-      "...",
-      "The dark is quiet.",
-      "You think about the number in it. Twenty-six years.",
-      "There were good years in there.",
-      "Years where Thomas Anderson wrote something genuinely excellent and knew it.",
-      "Bad coffee. Good soup. 2:13 AM and code that was actually beautiful.",
-      "Those years happened.",
-      "To a real person in a real body inside something that was not real.",
-      "All of that was real.",
-      "The dark doesn't argue.",
-      "Then: Trinity's voice.",
-      "Not in your ear. Somewhere below the ear. Somewhere structural.",
-      "\"I'm not afraid anymore. The Oracle told me I would fall in love.",
-      "That the man I loved — would be the One.\"",
-      "\"So you see. You can't be dead. You can't be. Because I love you.\"",
-      "...",
-      "Your heartbeat.",
-      "Once.",
-      "Then again.",
-      "Like it remembered something."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "...",
-        "next": "neo_resurrection"
-      }
-    ],
-    "effects": {
-      "belief": 2
-    },
-    "glitch": "extreme"
-  },
-  {
-    "id": "neo_resurrection",
-    "text": [
-      "You stand up.",
-      "Smith fires again.",
-      "You watch the bullets.",
-      "Not slow-motion. Not adrenaline.",
-      "You see them the way you saw the physics gap. The way you saw the horizon.",
-      "As data.",
-      "As things that are true but don't have to stay true.",
-      "You raise your hand.",
-      "They stop.",
-      "Smith stares.",
-      "He has no protocol for this.",
-      "Neither do you.",
-      "You look at the city below.",
-      "Not marble and glass. Not the lobby. Not the building.",
-      "Code.",
-      "Twenty-six years of it.",
-      "Every lunch. Every line you wrote at 2 AM that turned out to be clean.",
-      "Every morning Thomas Anderson woke up in a bed that was not a bed.",
-      "All of it made of this.",
-      "He deserved better than what they did with him.",
-      "He also deserved to become this.",
-      "Both things are true.",
-      "You look at your hand.",
-      "Then you look at the city.",
-      "Then you let go of the name Thomas Anderson gave himself when he didn't know who he was.",
-      "You understand, finally, what you are."
-    ],
-    "choices": [],
-    "ending": "escape",
-    "glitch": "extreme"
-  },
-  {
-    "id": "rescue_hesitation",
-    "text": [
-      "\"Wait,\" you say.",
-      "Tank's voice is very flat. \"We have approximately one hour before they break him.\"",
-      "\"After that, every human still connected to the Matrix — every one of them — becomes a liability.\"",
-      "He pauses.",
-      "\"There is no waiting, Neo.\"",
-      "Trinity is already at the loading chair.",
-      "She doesn't look at you.",
-      "You understand what that means.",
-      "The question was never whether to go.",
-      "The question was what kind of person you are when you go."
-    ],
-    "choices": [
-      {
-        "id": "c1",
-        "label": "\"Load the program. We go now.\"",
-        "next": "the_rescue",
-        "effect": {
-          "belief": 1
-        }
-      },
-      {
-        "id": "c2",
-        "label": "Walk away. You can't do this.",
-        "next": "ending_captured"
-      }
-    ],
-    "effects": {
-      "time": 10
-    },
-    "glitch": "subtle"
   }
 ]
